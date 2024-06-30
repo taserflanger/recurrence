@@ -54,26 +54,26 @@ function App() {
         }
       }
       if (sourceNode.type == "simplify") {
-        console.log(simplify(left), simplify(right))
-        let sourceIndex = parseInt(edges.filter((e)=>e.target === sourceNode.id).map((e)=>e.source)[0])
-        let sourceData = nodes[sourceIndex].data
+        console.log(simplify(left).toString(), simplify(right).toString())
+        let sourceIndex = edges.filter((e)=>e.target === sourceNode.id).map((e)=>e.source)[0]
+        let sourceData = nodes.filter(n=> n.id===sourceIndex)[0].data
         console.log(sourceData)
         try {
           console.log(rationalize(sourceData.left).toString())
-          if (rationalize(sourceData.left).toString() === rationalize(left).toString()) {
-            try {
-              console.log(rationalize(sourceData.right).toString())
-              if (rationalize(sourceData.right).toString() === rationalize(right).toString()) {
-                return true
-              }
-            } catch (error) {
-              if (rationalize(sourceData.right).toString() === rationalize(right).toString()) {
-                return true
-              }
-              return false
-            }
+          console.log(rationalize(left).toString())
+          if (rationalize(sourceData.left).toString() === rationalize(left).toString() && sourceData.right === right) {
+            return true
           }
         } catch (error) {
+          try {
+            console.log(rationalize(sourceData.right).toString())
+            if (rationalize(sourceData.right).toString() === rationalize(right).toString() && sourceData.left === left) {
+              return true
+            }
+          } catch (error) {
+            console.log(error)
+            return false
+          }
           return false
         }
       }
@@ -87,8 +87,8 @@ function App() {
         console.log(edges)
         let argumentsIndexes = edges.filter((e)=> e.target===sourceNode.id).map((e)=>e.source)
         console.log(argumentsIndexes);
-        let replaceBy = nodes[parseInt(argumentsIndexes[0])].data
-        let toReplace = nodes[parseInt(argumentsIndexes[1])].data
+        let replaceBy = nodes.filter(n=>n.id === argumentsIndexes[0])[0].data
+        let toReplace = nodes.filter(n=> n.id=== argumentsIndexes[1])[0].data
         console.log(toReplace, replaceBy)
         if (toReplace.left.indexOf(replaceBy.left) != -1) {
           console.log(toReplace, replaceBy)
