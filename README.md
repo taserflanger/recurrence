@@ -1,54 +1,133 @@
-![](https://github.com/xyflow/web/blob/main/assets/codesandbox-header-ts.png?raw=true)
+Voici un modèle de fichier `README.md` pour votre dépôt Git associé au projet **"L'AssistanT interactif de preuve"** :
 
-# React Flow starter (Vite + TS)
+```markdown
+# L'AssistanT Interactif de Preuve
 
-We've put together this template to serve as a starting point for folks
-interested in React Flow. You can use this both as a base for your own React
-Flow applications, or for small experiments or bug reports.
+![banner](path/to/banner.png)
 
-**TypeScript not your thing?** We also have a vanilla JavaScript starter template,
-just for you!
+## Introduction
 
-## Getting up and running
+**L'AssistanT Interactif de Preuve** est un projet visant à rendre l'apprentissage et la démonstration des mathématiques plus accessibles et interactifs. Conçu dans le cadre de mon Master 1 de Mathématiques à l'ENS de Lyon, ce projet transforme les principes de la preuve mathématique en un jeu interactif, destiné à la fois aux élèves et aux amateurs de mathématiques.
 
-You can get this template without forking/cloning the repo using `degit`:
+## Objectifs
+
+Le projet a deux objectifs principaux :
+1. **Éducation** : Introduire les élèves de collège et lycée à l'importance de la preuve en mathématiques à travers une approche ludique.
+2. **Découverte** : Offrir une introduction aux assistants de preuve pour ceux qui ont déjà une formation mathématique, les initiant ainsi à des outils plus avancés utilisés en recherche.
+
+## Fonctionnalités
+
+- **Interface Interactive** : Manipulez des boîtes représentant des propositions mathématiques et connectez-les pour démontrer des implications logiques.
+- **Validation des Implications** : Chaque connexion est validée pour vérifier la correction de l'implication selon des heuristiques.
+- **Prototype de Démonstration** : Contient un niveau démontrant la formule de la somme des n premiers entiers naturels par récurrence.
+
+## Captures d'Écran
+
+![screenshot1](path/to/screenshot1.png)
+![screenshot2](path/to/screenshot2.png)
+
+## Prérequis
+
+Assurez-vous d'avoir installé les éléments suivants avant de commencer :
+
+- **Node.js** : [Télécharger Node.js](https://nodejs.org/)
+- **npm** : Vient généralement avec Node.js
+- **TypeScript** : `npm install -g typescript`
+
+## Installation
+
+Clonez ce dépôt sur votre machine locale :
 
 ```bash
-npx degit xyflow/vite-react-flow-template your-app-name
+git clone https://github.com/votre-utilisateur/assistant-interactif-preuve.git
+cd assistant-interactif-preuve
 ```
 
-The template contains mostly the minimum dependencies to get up and running, but
-also includes eslint and some additional rules to help you write React code that
-is less likely to run into issues:
+Installez les dépendances :
 
 ```bash
-npm install # or `pnpm install` or `yarn install`
+npm install
 ```
 
-Vite is a great development server and build tool that we recommend our users to
-use. You can start a development server with:
+## Utilisation
+
+Pour démarrer l'application en mode développement, exécutez :
 
 ```bash
-npm run dev
+npm start
 ```
 
-While the development server is running, changes you make to the code will be
-automatically reflected in the browser!
+Ouvrez votre navigateur et allez à [http://localhost:3000](http://localhost:3000) pour voir l'application en action.
 
-## Things to try:
+## Structure du Projet
 
-- Create a new custom node inside `src/nodes/` (don't forget to export it from `src/nodes/index.ts`).
-- Change how things look by [overriding some of the built-in classes](https://reactflow.dev/learn/customization/theming#overriding-built-in-classes).
-- Add a layouting library to [position your nodes automatically](https://reactflow.dev/learn/layouting/layouting)
+Le projet utilise **React** pour l'interface utilisateur et **ReactFlow** pour gérer les connexions nodales. Voici un aperçu des principaux répertoires et fichiers :
 
-## Resources
+```
+assistant-interactif-preuve/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── Box.tsx
+│   │   ├── Connection.tsx
+│   │   └── ...
+│   ├── styles/
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── ...
+├── README.md
+├── package.json
+└── ...
+```
 
-Links:
+- **public/** : Contient les fichiers statiques.
+- **src/** : Contient le code source principal de l'application.
+- **components/** : Contient les composants React utilisés pour construire l'interface.
+- **styles/** : Contient les fichiers de style.
 
-- [React Flow - Docs](https://reactflow.dev)
-- [React Flow - Discord](https://discord.com/invite/Bqt6xrs)
+## Technologies Utilisées
 
-Learn:
+- **React** : Bibliothèque JavaScript pour la création d'interfaces utilisateur.
+- **ReactFlow** : Bibliothèque pour gérer des diagrammes de flux et des connexions nodales.
+- **TypeScript** : Superset de JavaScript ajoutant des types statiques.
 
-- [React Flow – Custom Nodes](https://reactflow.dev/learn/customization/custom-nodes)
-- [React Flow – Layouting](https://reactflow.dev/learn/layouting/layouting)
+## Limites et Améliorations
+
+- **Validation des Implications** : Actuellement basé sur des heuristiques, il peut valider incorrectement certaines connexions.
+- **Prototype Limité** : Seulement un niveau disponible, centré sur une démonstration simple.
+- **Difficultés Techniques** : Le développement a été limité par mon apprentissage en développement web, des améliorations futures sont nécessaires.
+
+## Contribuer
+
+Les contributions sont les bienvenues ! Veuillez suivre ces étapes pour contribuer :
+
+1. Forkez le dépôt.
+2. Créez votre branche (`git checkout -b feature/amélioration`).
+3. Commitez vos changements (`git commit -m 'Ajout d'une amélioration'`).
+4. Poussez votre branche (`git push origin feature/amélioration`).
+5. Ouvrez une Pull Request.
+
+## Auteur
+
+**Votre Nom** - [Profil GitHub](https://github.com/votre-utilisateur)
+
+## Licence
+
+Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+---
+
+Pour toute question ou suggestion, n'hésitez pas à ouvrir une issue sur ce dépôt.
+
+![footer](path/to/footer.png)
+```
+
+### Notes :
+
+1. **Bannière et captures d'écran** : Remplacez les `path/to/...` par les chemins réels des images pertinentes.
+2. **Liens** : Mettez à jour les liens vers votre dépôt GitHub, votre profil, et tout autre lien pertinent.
+3. **Licence** : Assurez-vous d'inclure un fichier `LICENSE` si vous mentionnez la licence.
+
+Ce modèle de `README.md` offre une présentation complète de votre projet, couvrant son objectif, son fonctionnement, son installation, et la structure du code, tout en facilitant la contribution.
